@@ -23,29 +23,28 @@ public class ClienteController {
     @Autowired
     private ClienteService cliSer;
 
-    @PostMapping("/clientes/crear")
-    public String crearCliente(@RequestBody Cliente cliente) {
-        cliSer.saveCliente(cliente);
-         return "Cliente creado";
-    }
-    
-    @GetMapping("/clientes")
+    //#region GETS
+     @GetMapping("/clientes")
     public List<Cliente> listaCliente() {
         return cliSer.getcliente();
     }
     
     @GetMapping("/clientes/{id_cliente}")
-    public Cliente getMethodName(@PathVariable Long id_cliente) {
+    public Cliente getClienteId(@PathVariable Long id_cliente) {
         return cliSer.findCliente(id_cliente);
     }
+   //#endregion
 
-    @DeleteMapping("/eliminar/{id_cliente}")
-    public String eliminarCliente(@PathVariable Long id_cliente){
-        cliSer.deleteCliente(id_cliente);
-        return "El cliente ha sido eliminado";
+   //#region POSTS
+    @PostMapping("/clientes/crear")
+    public String crearCliente(@RequestBody Cliente cliente) {
+        cliSer.saveCliente(cliente);
+         return "Cliente creado";
     }
+   //#endregion
 
-    @PutMapping("/clientes/editar/{idOriginal}")
+   //#region PUTS
+   @PutMapping("/clientes/editar/{idOriginal}")
     public String editarCliente(@PathVariable Long idOriginal, @RequestBody Cliente clienteNuevo) {
         cliSer.editCliente(idOriginal,
                            clienteNuevo.getId_client(),
@@ -55,6 +54,22 @@ public class ClienteController {
 
         return "Cliente editado";
     }
+   //#endregion
+
+   //#region DELETES
+    @DeleteMapping("/eliminar/{id_cliente}")
+    public String eliminarCliente(@PathVariable Long id_cliente){
+        cliSer.deleteCliente(id_cliente);
+        return "El cliente ha sido eliminado";
+    }
+   //#endregion 
+   
+    
+   
+
+   
+
+    
 
 
 }
