@@ -22,7 +22,7 @@ public class ProductoController {
     private ProductoService proSer;
 
     // #region GETS
-    @GetMapping("productos")
+    @GetMapping("/productos")
     public List<Producto> listaProducto() {
         return proSer.getProducto();
     }
@@ -32,10 +32,17 @@ public class ProductoController {
         return proSer.findProducto(codigoProducto);
     }
 
-    @GetMapping("/falta_stock")
+    
+
+    //Producto con stock <5
+    @GetMapping("/productos/falta_stock")
     public List<Producto> obtenerProductosConBajoStock() {
         return proSer.obtenerProductosConBajoStock();
+        
     }
+    
+
+
     // #endregion
 
     // #region POSTS
@@ -60,7 +67,7 @@ public class ProductoController {
     // #endregion
 
     // #region DELETES
-    @DeleteMapping("/eliminar/{codigoProducto}")
+    @DeleteMapping("/productos/eliminar/{codigoProducto}")
     public String eliminarProducto(@PathVariable Long codigoProducto) {
         proSer.deleteProducto(codigoProducto);
         return "Producto eliminado";

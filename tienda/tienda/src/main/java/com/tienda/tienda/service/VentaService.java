@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tienda.tienda.model.Producto;
 import com.tienda.tienda.model.Venta;
 import com.tienda.tienda.repository.IVentaRepository;
 

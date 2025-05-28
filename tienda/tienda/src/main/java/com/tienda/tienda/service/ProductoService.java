@@ -1,5 +1,6 @@
 package com.tienda.tienda.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,13 +68,17 @@ public class ProductoService implements IProductoService {
     // #endregion
     
     // #region GETS
-    // GET PRODUCTOS -> Producto.cantidad_disponible > 5
-    public List<Producto> obtenerProductosConBajoStock() {
-        return productRepo.findByCantidadDisponibleLessThan(5);
+    //PRODUCTO->filtra por producto.cantidadDisponible < 5
+    public List<Producto> obtenerProductosConBajoStock(){
+        return productRepo.obtenerProductosConBajoStock(5);
+        
+
     }
+    
+  
     // #endregion
 
-    // #region PUTS
+    // #region POSTS
     // #endregion
 
     // #region DELETES
