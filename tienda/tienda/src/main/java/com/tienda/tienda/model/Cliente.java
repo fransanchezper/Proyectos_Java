@@ -22,19 +22,14 @@ public class Cliente {
    private String apellido;
    private String dni;
 
-   @OneToMany(mappedBy = "cliente")
-   @JsonIgnore
-   private List<Venta> ventas;
-
    public Cliente() {
    }
 
-   public Cliente(Long id_client, String nombre, String apellido, String dni, List<Venta> ventas) {
+   public Cliente(Long id_client, String nombre, String apellido, String dni) {
       this.id_client = id_client;
       this.nombre = nombre;
       this.apellido = apellido;
       this.dni = dni;
-      this.ventas = ventas;
    }
 
    

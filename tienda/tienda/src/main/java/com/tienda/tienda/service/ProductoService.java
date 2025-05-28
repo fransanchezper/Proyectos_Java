@@ -9,56 +9,77 @@ import com.tienda.tienda.model.Producto;
 import com.tienda.tienda.repository.IProductoRepository;
 
 @Service
-public class ProductoService implements IProductoService{
+public class ProductoService implements IProductoService {
 
-     @Autowired
+    @Autowired
     private IProductoRepository productRepo;
 
+    // #region CRUD
+    // GET LIST
     @Override
     public List<Producto> getProducto() {
-         List<Producto> listaProductos = productRepo.findAll();
-         return listaProductos;
+        List<Producto> listaProductos = productRepo.findAll();
+        return listaProductos;
     }
 
+    // GET BY ID
     @Override
     public Producto findProducto(Long codigo_producto) {
         Producto product = productRepo.findById(codigo_producto).orElse(null);
         return product;
     }
 
+    // POST
     @Override
     public void saveProducto(Producto product) {
         productRepo.save(product);
     }
 
+    // DELETE
     @Override
     public void deleteProducto(Long codigo_producto) {
-       productRepo.deleteById(codigo_producto);
+        productRepo.deleteById(codigo_producto);
     }
 
+    // EDIT
     @Override
     public void editProducto(Long idOriginal,
-                             Long codigo_productoNuevo,
-                             String nombreNuevo,
-                             String marcaNueva,
-                             Double costoNuevo,
-                             Double cantidad_disponibleNuevo) {
+            Long codigoProductoNuevo,
+            String nombreNuevo,
+            String marcaNueva,
+            Double costoNuevo,
+            Double cantidadDisponibleNuevo) {
         Producto producto = this.findProducto(idOriginal);
         if (producto != null) {
-            producto.setCodigo_producto(codigo_productoNuevo);
+            producto.setCodigoProducto(codigoProductoNuevo);
             producto.setNombre(nombreNuevo);
             producto.setMarca(marcaNueva);
             producto.setCosto(costoNuevo);
-            producto.setCantidad_disponible(cantidad_disponibleNuevo);
+            producto.setCantidadDisponible(cantidadDisponibleNuevo);
 
             this.saveProducto(producto);
-        }else{
+        } else {
             System.out.println("Producto no encontrada con ID: " + idOriginal);
         }
     }
+    // #endregion
 
+    // #region GET
+
+    // GET PRODUCTOS -> Producto.cantidad_disponible > 5
     public List<Producto> obtenerProductosConBajoStock() {
         return productRepo.findByCantidadDisponibleLessThan(5);
     }
-   
+    
+    // #endregion
+
+    // #region PUT
+    // #endregion
+
+    // #region DELETE
+    // #endregion
+
+    // #region EDIT
+    // #endregion
+
 }

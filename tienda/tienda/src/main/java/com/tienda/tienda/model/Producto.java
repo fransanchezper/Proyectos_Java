@@ -17,29 +17,23 @@ import lombok.Setter;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long codigo_producto;
+    private Long codigoProducto;
     private String nombre;
     private String marca;
     private Double costo;
-    private Double cantidad_disponible;
-
-    @ManyToMany(mappedBy = "productos")
-    @JsonIgnore
-    private List<Venta> ventas;
+    private Double cantidadDisponible;
 
     
     public Producto() {
     }
 
 
-    public Producto(Long codigo_producto, String nombre, String marca, Double costo, Double cantidad_disponible,
-            List<Venta> ventas) {
-        this.codigo_producto = codigo_producto;
+    public Producto(Long codigoProducto, String nombre, String marca, Double costo, Double cantidadDisponible) {
+        this.codigoProducto = codigoProducto;
         this.nombre = nombre;
         this.marca = marca;
         this.costo = costo;
-        this.cantidad_disponible = cantidad_disponible;
-        this.ventas = ventas;
+        this.cantidadDisponible = cantidadDisponible;
     }
 
 
