@@ -18,5 +18,6 @@ public interface IVentaRepository extends JpaRepository<Venta, Long>{
      TuplaLongDouble getResumenVentasPorFecha(@Param("fecha_venta") LocalDate fecha_venta);
 
 
-     //VentasDTO getMayorVenta()
+    @Query(SELECT vd FROM VentasDTO vd WHERE)
+     VentasDTO getMayorVenta();
 }
