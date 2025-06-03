@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.tienda.tienda.model.Producto;
 import com.tienda.tienda.model.TuplaLongDouble;
 import com.tienda.tienda.model.Venta;
+import com.tienda.tienda.model.DTO.VentasDTO;
 import com.tienda.tienda.repository.IProductoRepository;
 import com.tienda.tienda.repository.IVentaRepository;
 
@@ -71,15 +72,7 @@ public class VentaService implements iVentaService {
     // #endregion
 
     // #region GETS
-    //GET Productos By codigo de Ventas
-    // public List<Producto> obtenerProductosDeVenta(Long codigoVenta) {
-    //     Venta venta = ventarepo.findById(codigoVenta)
-    //             .orElseThrow(() -> new RuntimeException("Venta no encontrada")); // esto es una excepcion que lanza este
-    //                                                                              // mensaje si es null codigoVenta
-
-    //     return venta.getProductos();
-    // }
-
+   
       public List<Producto> getListaProductosByCodigoVenta(Long codigo_venta){
         return productoRepo.getListaProductosByCodigoVenta(codigo_venta);
       }
@@ -88,6 +81,9 @@ public class VentaService implements iVentaService {
         return ventarepo.getResumenVentasPorFecha(fecha_venta);
       }
       
+    //   public VentasDTO getMayorVenta(){
+     //   return ventarepo.getMayorVenta();
+    //  }
     // #endregion
 
     // #region PUTS

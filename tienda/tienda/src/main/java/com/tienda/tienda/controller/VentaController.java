@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tienda.tienda.model.Producto;
 import com.tienda.tienda.model.TuplaLongDouble;
 import com.tienda.tienda.model.Venta;
+import com.tienda.tienda.model.DTO.VentasDTO;
 import com.tienda.tienda.service.VentaService;
 
 
@@ -51,6 +52,11 @@ public class VentaController {
      public TuplaLongDouble getResumenVentasPorFecha(@PathVariable LocalDate fecha_venta){
         return venSer.getResumenVentasPorFecha(fecha_venta);
       }
+
+    //   @GetMapping("/ventas/mayor_venta")
+    //   public VentasDTO getMayorVenta(){
+    //     return venSer.getMayorVenta();
+    //   }
     // #endregion
 
     // #region POSTS
