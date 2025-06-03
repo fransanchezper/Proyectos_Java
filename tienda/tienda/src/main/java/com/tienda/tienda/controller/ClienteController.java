@@ -57,7 +57,7 @@ public class ClienteController {
    //#endregion
 
    //#region DELETES
-    @DeleteMapping("/eliminar/{id_cliente}")
+    @DeleteMapping("/cliente/eliminar/{id_cliente}")
     public String eliminarCliente(@PathVariable Long id_cliente){
         cliSer.deleteCliente(id_cliente);
         return "El cliente ha sido eliminado";

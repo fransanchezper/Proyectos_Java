@@ -6,7 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.tienda.tienda.model.Producto;
+import com.tienda.tienda.model.TuplaLongDouble;
 import com.tienda.tienda.model.Venta;
+import com.tienda.tienda.repository.IProductoRepository;
 import com.tienda.tienda.repository.IVentaRepository;
 
 @Service
@@ -14,6 +17,9 @@ public class VentaService implements iVentaService {
 
     @Autowired
     private IVentaRepository ventarepo;
+
+    @Autowired
+    private IProductoRepository productoRepo;
 
     // #region CRUD
 
@@ -73,6 +79,15 @@ public class VentaService implements iVentaService {
 
     //     return venta.getProductos();
     // }
+
+      public List<Producto> getListaProductosByCodigoVenta(Long codigo_venta){
+        return productoRepo.getListaProductosByCodigoVenta(codigo_venta);
+      }
+
+      public TuplaLongDouble getResumenVentasPorFecha(LocalDate fecha_venta){
+        return ventarepo.getResumenVentasPorFecha(fecha_venta);
+      }
+      
     // #endregion
 
     // #region PUTS

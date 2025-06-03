@@ -13,4 +13,7 @@ import com.tienda.tienda.model.Producto;
 public interface IProductoRepository extends JpaRepository<Producto, Long> {
     @Query("SELECT p FROM Producto p  where p.cantidadDisponible<:cantidad")
     List<Producto> obtenerProductosConBajoStock(@Param("cantidad") int cantidad);
+
+    @Query("SELECT p FROM Producto p  where p.venta = :codigo_venta ")
+    List<Producto> getListaProductosByCodigoVenta(@Param("codigo_venta") Long codigo_venta);
 }
