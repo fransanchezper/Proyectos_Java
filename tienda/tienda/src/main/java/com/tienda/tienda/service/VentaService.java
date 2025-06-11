@@ -72,12 +72,12 @@ public class VentaService implements iVentaService {
     // #endregion
 
     // #region GETS
-   
-      public List<Producto> getListaProductosByCodigoVenta(Long codigo_venta){
-        return productoRepo.getListaProductosByCodigoVenta(codigo_venta);
-      }
 
-      public TuplaLongDouble getResumenVentasPorFecha(LocalDate fecha_venta){
+    public List<Producto> getListaProductosByCodigoVenta(Long codigo_venta) {
+        return productoRepo.getListaProductosByCodigoVenta(codigo_venta);
+    }
+
+    public TuplaLongDouble getResumenVentasPorFecha(LocalDate fecha_venta) {
         return ventarepo.getResumenVentasPorFecha(fecha_venta);
       }
       

@@ -18,7 +18,6 @@ import com.tienda.tienda.model.Venta;
 import com.tienda.tienda.model.DTO.VentasDTO;
 import com.tienda.tienda.service.VentaService;
 
-
 @RestController
 public class VentaController {
 
@@ -44,21 +43,22 @@ public class VentaController {
 
         return venSer.getListaProductosByCodigoVenta(codigo_venta);
     }
-    @GetMapping("/ventas/resumen_venta/{fecha_venta}")
-     public TuplaLongDouble getResumenVentasPorFecha(@PathVariable LocalDate fecha_venta){
-        return venSer.getResumenVentasPorFecha(fecha_venta);
-      }
 
-      @GetMapping("/ventas/mayor_venta")
-      public VentasDTO getMayorVenta(){
+    @GetMapping("/ventas/resumen_venta/{fecha_venta}")
+    public TuplaLongDouble getResumenVentasPorFecha(@PathVariable LocalDate fecha_venta) {
+        return venSer.getResumenVentasPorFecha(fecha_venta);
+    }
+
+    @GetMapping("/ventas/mayor_venta")
+    public VentasDTO getMayorVenta() {
         return venSer.getMayorVenta();
-      }
+    }
     // #endregion
 
     // #region POSTS
     @PostMapping("/ventas/crear")
     public String crearVenta(@RequestBody Venta venta) {
-        for(Producto p : venta.getProductos()){
+        for (Producto p : venta.getProductos()) {
             p.setVenta(venta);
         }
         venSer.saveVenta(venta);
