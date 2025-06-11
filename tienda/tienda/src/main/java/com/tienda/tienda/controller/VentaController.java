@@ -37,11 +37,7 @@ public class VentaController {
         return venSer.findVenta(codigo_venta);
     }
     
-    // @GetMapping("/productos/{codigoVenta}")
-    // public List<Producto> obtenerProductosPorVenta(@PathVariable Long
-    // codigoVenta) {
-    // return venSer.obtenerProductosDeVenta(codigoVenta);
-    // }
+   
     //Productos segun venta id
     @GetMapping("/ventas/productos/{codigo_venta}")
     public List<Producto> getListaProductosByCodigoVenta(@PathVariable Long codigo_venta) {
@@ -53,10 +49,10 @@ public class VentaController {
         return venSer.getResumenVentasPorFecha(fecha_venta);
       }
 
-    //   @GetMapping("/ventas/mayor_venta")
-    //   public VentasDTO getMayorVenta(){
-    //     return venSer.getMayorVenta();
-    //   }
+      @GetMapping("/ventas/mayor_venta")
+      public VentasDTO getMayorVenta(){
+        return venSer.getMayorVenta();
+      }
     // #endregion
 
     // #region POSTS

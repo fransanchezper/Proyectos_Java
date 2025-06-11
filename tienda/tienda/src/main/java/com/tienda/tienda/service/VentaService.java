@@ -81,9 +81,10 @@ public class VentaService implements iVentaService {
         return ventarepo.getResumenVentasPorFecha(fecha_venta);
       }
       
-    //   public VentasDTO getMayorVenta(){
-     //   return ventarepo.getMayorVenta();
-    //  }
+      public VentasDTO getMayorVenta(){
+       return ventarepo.getMayorVenta().get(0);
+      }
+      
     // #endregion
 
     // #region PUTS

@@ -10,14 +10,14 @@ public class VentasDTO {
    
     private Long ventaId;
     private Double total;
-    private Integer cantidadProductos;
+    private Long cantidadProductos;
     private String nombreCliente;
     private String apellidoCliente;
 
     public VentasDTO() {
     }
 
-    public VentasDTO(Long ventaId, Double total, Integer cantidadProductos, String nombreCliente,
+    public VentasDTO(Long ventaId, Double total, Long cantidadProductos, String nombreCliente,
             String apellidoCliente) {
         this.ventaId = ventaId;
         this.total = total;
