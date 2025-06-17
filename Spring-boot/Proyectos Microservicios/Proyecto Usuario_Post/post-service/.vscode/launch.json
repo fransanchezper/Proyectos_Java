@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "PostService - Puerto 8084",
+      "request": "launch",
+      "mainClass": "com.todocodeacademy.post_service.PostServiceApplication",
+      "projectName": "post-service",
+      "vmArgs": "-Dserver.port=8081"
+    },
+    {
+      "type": "java",
+      "name": "PostService - Puerto 8082",
+      "request": "launch",
+      "mainClass": "com.todocodeacademy.post_service.PostServiceApplication",
+      "projectName": "post-service",
+      "vmArgs": "-Dserver.port=8082"
+    }
+  ]
+}

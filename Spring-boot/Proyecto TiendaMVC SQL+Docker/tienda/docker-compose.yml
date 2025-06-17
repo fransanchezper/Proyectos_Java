@@ -1,0 +1,30 @@
+services:
+  backend-tienda:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/tienda_jpa
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tienda_jpa
+    volumes:
+      - mysql-vol:/mysql
+
+volumes:
+  mysql-vol:
+    
+    
+
+
+
+

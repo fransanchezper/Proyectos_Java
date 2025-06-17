@@ -1,0 +1,6 @@
+server:
+  port: 8081    #este es el formato para archivos yml en vez de server.port=8081
+                # y port que es el siguiente escalon necesita dos espacios y despues de los dos puntos un espacio
+spring:
+  aplication:
+    name: config-server
