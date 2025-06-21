@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "EurekaSvApplication",
+            "request": "launch",
+            "mainClass": "com.todocodeacademy.eurekasv.EurekaSvApplication",
+            "projectName": "eureka-sv"
+        },
+        {
+            "type": "java",
+            "name": "PostServiceApplication",
+            "request": "launch",
+            "mainClass": "com.todocodeacademy.post_service.PostServiceApplication",
+            "projectName": "post-service",
+            "args": "--server.port=8081"
+
+        },
+        {
+            "type": "java",
+            "name": "PostServiceApplication",
+            "request": "launch",
+            "mainClass": "com.todocodeacademy.post_service.PostServiceApplication",
+            "projectName": "post-service",
+            "args": "--server.port=8082"
+
+        },
+        {
+            "type": "java",
+            "name": "UsersServiceApplication",
+            "request": "launch",
+            "mainClass": "com.todocodeacademy.users_service.UsersServiceApplication",
+            "projectName": "users-service"
+        }
+    ]
+}
