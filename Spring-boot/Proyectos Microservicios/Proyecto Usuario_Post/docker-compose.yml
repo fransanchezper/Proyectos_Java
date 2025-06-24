@@ -1,0 +1,29 @@
+version: '2.1'
+
+services:
+  eureka-server:
+    build: eureka-server
+    mem_limit: 512m
+    ports:
+      - "8761:8761"
+    networks:
+      - 'userpost-network'
+      
+  users-service:
+    build: users-service
+    mem_limit: 512m
+    ports:
+      - "8083:8083"
+    networks:
+      - 'userpost-network'
+      
+  posts-service:
+    build: posts-service
+    mem_limit: 512m
+    ports:
+      - "8084:8084"
+    networks:
+      - 'userpost-network'
+      
+networks:
+  userpost-network:
