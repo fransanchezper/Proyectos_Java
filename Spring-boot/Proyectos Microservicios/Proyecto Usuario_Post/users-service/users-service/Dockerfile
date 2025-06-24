@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-slim
 
-ARG JAR_FILE=target/users-service-0.0.1.jar
+ARG JAR_FILE=target/*.jar
 
 COPY ${JAR_FILE} app_users-service.jar
 
