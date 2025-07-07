@@ -62,7 +62,7 @@ public class VentaController {
             p.setVenta(venta);
         }
         venSer.saveVenta(venta);
-        return "Se ha creado una persona";
+        return "Se ha creado una venta";
     }
 
     // #endregion
