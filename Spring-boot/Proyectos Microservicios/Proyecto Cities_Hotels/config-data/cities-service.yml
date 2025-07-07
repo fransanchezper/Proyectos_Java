@@ -1,9 +1,9 @@
 spring:
   application:
     name: cities-service
-  cloud:
-      config:
-        uri: http://config-server:8081
+  # cloud:
+  #     config:
+  #       uri: http://config-server:8081
 
 server:
   port: 8082
